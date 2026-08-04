@@ -23,10 +23,10 @@ Route::name('students.')->prefix('students')->group(function(){
     //daftar(index)
     Route::get('/', [StudentController::class, 'index'])->name('index');
     //detail(show)
-    Route::get('/{id}',[StudentController::class, 'show'])->name('show');//->whereNumber('');
     //tambah(create)
     Route::get('/create',[StudentController::class, 'create'])->name('create');
     //edit(edit)
+    Route::get('/{id}',[StudentController::class, 'show'])->name('show');//->whereNumber('');
     Route::get('/{id}/edit',[StudentController::class, 'edit'])->name('edit');
     //logika tambah(store)
     Route::post('/',[StudentController::class, 'store'])->name('store');

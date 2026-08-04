@@ -21,15 +21,24 @@ class StudentController extends Controller
     }
 
     public function show(string $id){
-            return view('students.show', compact('id'));
+        $title = "Sistem Sekolah - diriku show";
+        return view('students.show', [
+            'title' => $title,
+        ] );
     }
 
     public function create(){
-        return view('students.create');
+        $title = "Sistem Sekolah - diriku tambah";
+        return view('students.create', [
+            'title' => $title
+        ]);
     }
 
     public function edit(string $id){
-        return view('students.edit', compact('id'));
+        $title = "Sistem Sekolah - diriku edit";
+        return view('students.edit', [
+            'title' => $title
+        ]);
     }
 
     public function store(){
