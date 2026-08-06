@@ -43,9 +43,9 @@ Route::name('teachers.')->prefix('teachers')->group(function(){
     //daftar(index)
     Route::get('/', [TeacherController::class, 'index'])->name('index');
     //detail(show)
+    Route::get('/create',[TeacherController::class, 'create'])->name('create');
     Route::get('/{id}',[TeacherController::class, 'show'])->name('show');//->whereNumber('');
     //tambah(create)
-    Route::get('/create',[TeacherController::class, 'create'])->name('create');
     //edit(edit)
     Route::get('/{id}/edit',[TeacherController::class, 'edit'])->name('edit');
     //logika tambah(store)
@@ -63,9 +63,9 @@ Route::name('classes.')->prefix('classes')->group(function(){
     //daftar(index)
     Route::get('/', IndexController::class)->name('index');
     //detail(show)
+    Route::get('/create',CreateController::class)->name('create');
     Route::get('/{id}',ShowController::class)->name('show');//->whereNumber('');
     //tambah(create)
-    Route::get('/create',CreateController::class)->name('create');
     //edit(edit)
     Route::get('/{id}/edit',EditController::class)->name('edit');
     //logika tambah(store)
@@ -78,22 +78,6 @@ Route::name('classes.')->prefix('classes')->group(function(){
 
 
 // function major (Resource Controller)
-Route::name('majors.')->prefix('majors')->group(function(){
-   
-    //daftar(index)
-    Route::get('/', [MajorController::class, 'index'])->name('index');
-    //detail(show)
-    Route::get('/{id}',[MajorController::class, 'show'])->name('show');//->whereNumber('');
-    //tambah(create)
-    Route::get('/create',[MajorController::class, 'create'])->name('create');
-    //edit(edit)
-    Route::get('/{id}/edit',[MajorController::class, 'edit'])->name('edit');
-    //logika tambah(store)
-    Route::post('/',[MajorController::class, 'store'])->name('store');
-    //logika edit(update)
-    Route::put('/{id}',[MajorController::class, 'update'])->name('update');
-    //logika hapus(delete)
-    Route::delete('/{id}',[MajorController::class, 'destroy'])->name('destroy');
-});
+Route::resource('majors', MajorController::class);
 
 
