@@ -1,4 +1,4 @@
-@props(['type'])
+@props(['type' => 'SUCCESS '])
 @if ($type === 'ERROR')
     <div class="mb-8 border-b border-red-500 bg-red-100 rounded-lg p-4">
         <h1 class="text-lg text-red-500 font-bold">Error</h1>
@@ -9,6 +9,11 @@
         <h1 class="text-lg text-yellow-500 font-bold">Error</h1>
         <p class="text-lg text-yellow-500">{{ $slot }}</p>
     </div> <!-- Always remember that you are absolutely unique. Just like everyone else. - Margaret Mead -->
+@elseif($type === 'SUCCESS')
+    <div class="mb-8 border-b border-green-500 bg-green-100 rounded-lg p-4">
+        <h1 class="text-lg text-green-500 font-bold">Success</h1>
+        <p class="text-lg text-green-500">{{ $slot }}</p>
+    </div> 
 @else
     <div class="mb-8 border-b border-blue-500 bg-blue-100 rounded-lg p-4">
         <h1 class="text-lg text-blue-500 font-bold">Error</h1>

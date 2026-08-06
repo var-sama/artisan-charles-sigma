@@ -61,19 +61,19 @@ Route::name('teachers.')->prefix('teachers')->group(function(){
 Route::name('classes.')->prefix('classes')->group(function(){
    
     //daftar(index)
-    Route::get('/', [IndexController::class, 'index'])->name('index');
+    Route::get('/', IndexController::class)->name('index');
     //detail(show)
-    Route::get('/{id}',[ShowController::class, 'show'])->name('show');//->whereNumber('');
+    Route::get('/{id}',ShowController::class)->name('show');//->whereNumber('');
     //tambah(create)
-    Route::get('/create',[CreateController::class, 'create'])->name('create');
+    Route::get('/create',CreateController::class)->name('create');
     //edit(edit)
-    Route::get('/{id}/edit',[EditController::class, 'edit'])->name('edit');
+    Route::get('/{id}/edit',EditController::class)->name('edit');
     //logika tambah(store)
-    Route::post('/',[StoreController::class, 'store'])->name('store');
+    Route::post('/',StoreController::class)->name('store');
     //logika edit(update)
-    Route::put('/{id}',[UpdateController::class, 'update'])->name('update');
+    Route::put('/{id}',UpdateController::class)->name('update');
     //logika hapus(delete)
-    Route::delete('/{id}',[DestroyController::class, 'destroy'])->name('destroy');
+    Route::delete('/{id}',DestroyController::class)->name('destroy');
 });
 
 
