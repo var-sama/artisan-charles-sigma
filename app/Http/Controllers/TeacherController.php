@@ -8,7 +8,7 @@ class TeacherController extends Controller
 {
     public function index()
     {
-        $title = "Sistem Sekolah - guruku hebat";
+        $title = "Sistem Sekolah - Daftar Guru";
         $teachers = [
         [   'id' => 1,
             'nip' => '198501012024',
@@ -35,21 +35,21 @@ class TeacherController extends Controller
     }
 
     public function show($id){
-        $title = "Sistem Sekolah - guruku show";
+        $title = "Sistem Sekolah - Detail Guru";
         return view('teachers.show', [
             'title' => $title,
         ] );
     }
 
     public function create(){
-        $title = "Sistem Sekolah - guruku create";
+        $title = "Sistem Sekolah - Tambah Guru";
         return view('teachers.create', [
             'title' => $title,
         ] );
     }
 
     public function edit(string $id){
-        $title = "Sistem Sekolah - guruku edit";
+        $title = "Sistem Sekolah - Edit Guru";
         return view('teachers.edit', [
             'title' => $title,
         ] );

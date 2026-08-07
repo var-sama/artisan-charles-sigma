@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('title', $title)
 @section('content')
+
+<x-alert type="ERROR">
+   Terjadi Kesalahan pada sistem. Silakan hubungi administrator untuk bantuan lebih lanjut.
+</x-alert>
    
    <div class="mb-8 flex items-end justify-between border-b border-[#E5E3DB] pb-5">
 

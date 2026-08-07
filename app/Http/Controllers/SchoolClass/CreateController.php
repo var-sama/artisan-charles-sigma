@@ -9,7 +9,7 @@ class CreateController extends Controller
 {
     public function __invoke(Request $request)
    {
-        $title = "Sistem Sekolah - kelasku tambah";
+        $title = "Sistem Sekolah - Tambah Kelas";
 
         $majors = [
             [
